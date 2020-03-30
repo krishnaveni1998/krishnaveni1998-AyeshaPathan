@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<!-- JSON Array -->
+	<p>Access an array value of a JSON object.</p>
+	<p id="demo"></p>
+
+	<p>Looping through an array using a for in loop:</p>
+	<p id="demo1"></p>
+
+	<script>
+		var myObj, x, y = "", i;
+		myObj = {
+			"name" : "John",
+			"age" : 30,
+			"cars" : [ "Ford", "BMW", "Fiat" ]
+		};
+		x = myObj.cars[0];
+		document.getElementById("demo").innerHTML = x;
+
+		for (i in myObj.cars) {
+			y += myObj.cars[i] + "<br>";
+		}
+
+		// or below for loop can also be used
+		/*
+		for (i = 0; i < myObj.cars.length; i++) {
+		  y += myObj.cars[i] + "<br>";
+		}*/
+
+		document.getElementById("demo1").innerHTML = y;
+	</script>
+
+</body>
+</html>

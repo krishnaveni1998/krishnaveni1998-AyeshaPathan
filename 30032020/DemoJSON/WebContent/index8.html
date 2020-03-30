@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+	<!-- JSON Array   -->
+	<p>Looping through arrays inside arrays.</p>
+
+	<p id="demo"></p>
+
+	<p>To modify an array value of a JSON object.</p>
+
+	<p id="demo1"></p>
+
+
+	<p>To delete properties of an array.</p>
+
+	<p id="demo2"></p>
+
+
+	<script>
+		var myObj, i, j, x = "";
+		myObj = {
+			"name" : "John",
+			"age" : 30,
+			"cars" : [ {
+				"name" : "Ford",
+				"models" : [ "Fiesta", "Focus", "Mustang" ]
+			}, {
+				"name" : "BMW",
+				"models" : [ "320", "X3", "X5" ]
+			}, {
+				"name" : "Fiat",
+				"models" : [ "500", "Panda" ]
+			} ]
+		}
+		for (i in myObj.cars) {
+			x += "<h4>" + myObj.cars[i].name + "</h4>";
+			for (j in myObj.cars[i].models) {
+				x += myObj.cars[i].models[j] + "<br>";
+			}
+		}
+		document.getElementById("demo").innerHTML = x;
+
+		//Modify an array value
+		var myObj, i, x = "";
+		myObj = {
+			"name" : "John",
+			"age" : 30,
+			"cars" : [ "Ford", "BMW", "Fiat" ]
+		};
+		myObj.cars[1] = "Mercedes";
+
+		for (i in myObj.cars) {
+			x += myObj.cars[i] + "<br>";
+		}
+		document.getElementById("demo1").innerHTML = x;
+
+		//delete an array value
+		var myObj, i, x = "";
+		myObj = {
+			"name" : "John",
+			"age" : 30,
+			"cars" : [ "Ford", "BMW", "Fiat" ]
+		}
+		delete myObj.cars[1];
+
+		for (i in myObj.cars) {
+			x += myObj.cars[i] + "<br>";
+		}
+		document.getElementById("demo2").innerHTML = x;
+	</script>
+
+</body>
+</html>

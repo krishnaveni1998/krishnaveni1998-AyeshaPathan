@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<!-- JSON Object -->
+	<p>Access a JSON object using dot or bracket notation:</p>
+
+	<p id="demo"></p>
+	<p id="demo1"></p>
+
+	<p>To loop all properties in a JSON object.</p>
+	<p id="demo2"></p>
+	s
+
+	<p>Use bracket notation to access the property values.</p>
+	<p id="demo3"></p>
+
+	<p>To access nested JSON objects.</p>
+	<p id="demo4"></p>
+
+	<p>To modify values in a JSON object.</p>
+	<p id="demo5"></p>
+
+	<p>To delete properties of a JSON object.</p>
+	<p id="demo6"></p>
+
+	<script>
+		var myObj, x;
+		myObj = {
+			"name" : "John",
+			"age" : 30,
+			"car" : null
+		};
+		x = myObj.name;
+		y = myObj["age"];
+		document.getElementById("demo").innerHTML = x;
+		document.getElementById("demo1").innerHTML = y;
+
+		var myObj, x;
+		myObj = {
+			"name" : "John",
+			"age" : 30,
+			"car" : null
+		};
+		for (x in myObj) {
+			document.getElementById("demo2").innerHTML += x + "<br>";
+		}
+
+		var myObj, x;
+		myObj = {
+			"name" : "John",
+			"age" : 30,
+			"car" : null
+		};
+		for (x in myObj) {
+			document.getElementById("demo3").innerHTML += myObj[x] + "<br>";
+		}
+
+		var myObj = {
+			"name" : "John",
+			"age" : 30,
+			"cars" : {
+				"car1" : "Ford",
+				"car2" : "BMW",
+				"car3" : "Brezza"
+			}
+		}
+		document.getElementById("demo4").innerHTML += myObj.cars.car2 + "<br>";
+		//or:
+		document.getElementById("demo4").innerHTML += myObj.cars["car2"];
+
+		var myObj1, j, y = "";
+		myObj1 = {
+			"name" : "John",
+			"age" : 30,
+			"cars" : {
+				"car1" : "Ford",
+				"car2" : "BMW",
+				"car3" : "Brezza"
+			}
+		}
+		myObj1.cars.car2 = "Mercedes";
+		myObj1.cars["car3"] = "Verna";
+
+		for (j in myObj1.cars) {
+			y += myObj1.cars[j] + "<br>";
+		}
+
+		document.getElementById("demo5").innerHTML = y;
+
+		var myObj2, k, z = "";
+		myObj2 = {
+			"name" : "John",
+			"age" : 30,
+			"cars" : {
+				"car1" : "Ford",
+				"car2" : "BMW",
+				"car3" : "Brezza"
+			}
+		}
+		myObj2.cars.car2 = "Mercedes";
+		myObj2.cars["car3"] = "Verna";
+
+		delete myObj2.cars.car2;
+		for (k in myObj2.cars) {
+			z += myObj2.cars[k] + "<br>";
+		}
+
+		document.getElementById("demo6").innerHTML = z;
+	</script>
+
+</body>
+</html>

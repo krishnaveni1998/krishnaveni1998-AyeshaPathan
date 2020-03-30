@@ -1,0 +1,24 @@
+{
+  "records": {
+    "record": [
+      {
+        "from": "Ayesha",
+        "to": "Pooja",
+        "title": "JSON File",
+        "description": "This is my first JSON File"
+      },
+      {
+        "from": "Ayesha",
+        "to": "Pooja",
+        "title": "Important message",
+        "description": "Please read this message"
+      },
+      {
+        "from": "Pooja",
+        "to": "Ayesha",
+        "title": "Re: Important message",
+        "description": "Yes, I have read it!"
+      }
+    ]
+  }
+}

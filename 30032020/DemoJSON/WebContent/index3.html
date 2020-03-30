@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+	<!-- JSON Object -->
+
+	<p>Access a JavaScript object:</p>
+
+	<p id="demo"></p>
+
+	<p id="demo1"></p>
+
+	<p>Modify a JavaScript object:</p>
+
+	<p id="demo2"></p>
+
+
+	<script>
+		var myObj, x;
+		myObj = {
+			name : "John",
+			age : 30,
+			city : "New York"
+		};
+		x = myObj.name;
+		document.getElementById("demo").innerHTML = x;
+		y = myObj["age"];
+		document.getElementById("demo1").innerHTML = y;
+		myObj.name = "Gilbert";
+		document.getElementById("demo2").innerHTML = myObj.name;
+	</script>
+
+</body>
+</html>
